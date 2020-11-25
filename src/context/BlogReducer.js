@@ -13,8 +13,17 @@ export const BlogReducer = (state,action) => {
             return{
                 ...state,blogPosts:action.payload
             };
+            
         
         }
+        case 'SET_POST':{
+            return{
+                ...state,currentBlogPost:action.payload
+            };
+            
+        
+        }
+
         default:
             return state;
 

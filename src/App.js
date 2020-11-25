@@ -1,17 +1,29 @@
 import React from 'react';
-import {Navbar} from './components/Navbar';
-import{Background} from './components/Background';
 import'./App.css';
 import { BlogProvider } from './context/BlogProvider';
-import { PostLists } from './components/PostLists';
+
+import{BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Navbar } from './components/Navbar';
+import{Post} from './pages/Post';
 function App() {
   return (
    
       <BlogProvider>
          <div className="App">
-     <Navbar />
-     <Background />
-     <PostLists/>
+        <Router>
+        <Navbar/>
+
+        <Switch>
+        <Route path='/'> <Home/> </Route>
+        <Route path='/:postId'> <Post/> </Route>
+        </Switch>
+
+       
+        </Router>
+      
+
+
      </div>
      </BlogProvider>
     
