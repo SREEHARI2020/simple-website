@@ -1,11 +1,20 @@
 import React from 'react';
 import {Navbar} from './components/Navbar';
+import{Background} from './components/Background';
 import'./App.css';
+import { BlogProvider } from './context/BlogProvider';
+import { PostLists } from './components/PostLists';
 function App() {
   return (
-    <div className="App">
+   
+      <BlogProvider>
+         <div className="App">
      <Navbar />
-    </div>
+     <Background />
+     <PostLists/>
+     </div>
+     </BlogProvider>
+    
   );
 }
 
